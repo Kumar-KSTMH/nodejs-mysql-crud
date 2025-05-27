@@ -1,10 +1,13 @@
 var express = require('express')
 var app = express()
 
-app.get('/', function(req, res) {
-	// render to views/index.ejs template file
-	res.render('index', {title: 'My Node.js Application'})
-})
+app.get('/', function(req, res, next) {
+  res.render('index', {
+    title: 'My Node.js Application',
+    users: [] // 👈 Add this line to prevent 'users is not defined'
+  });
+});
+
 
 /** 
  * We assign app object to module.exports
