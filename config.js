@@ -1,15 +1,16 @@
 var config = {
 	database: {
-		host:	  'localhost', 	// database host
-		user: 	  'root', 		// your database username
-		password: 'root', 		// your database password
-		port: 	  3306, 		// default MySQL port
-		db: 	  'test' 		// your database name
+		host: process.env.DB_HOST || 'localhost',
+		user: process.env.DB_USER || 'root',
+		password: process.env.DB_PASS || 'root',
+		port: process.env.DB_PORT || 3306,
+		db: process.env.DB_NAME || 'test'
 	},
 	server: {
-		host: '127.0.0.1',
-		port: '3000'
+		host: '0.0.0.0',
+		port: process.env.APP_PORT || 3000
 	}
-}
+};
 
-module.exports = config
+module.exports = config;
+
