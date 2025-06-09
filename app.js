@@ -59,9 +59,8 @@ var bodyParser = require('body-parser')
  * (which is how browsers tend to send form data from regular forms set to POST) 
  * and exposes the resulting object (containing the keys and values) on req.body.
  */ 
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
-
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 /**
  * This module let us use HTTP verbs such as PUT or DELETE 
